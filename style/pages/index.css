@@ -1,0 +1,31 @@
+.content{ margin-top: 50px; }
+.content .wrapper{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form .input{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-flow: column wrap;
+}
+.form .input:not(:first-child){ margin-top: 20px; }
+.form .input input{ 
+    width: 100%;
+    padding: 3px 5px;
+}
+.form .input input:focus{
+    outline: rgba(0, 141, 0, 0.45) solid 3px;
+} 
+
+
+.client-area{
+    margin-top: 30px;
+    /* border: 1px solid #999; */
+}
+
+.details-area{
+    margin-top: 50px;
+}
