@@ -5,26 +5,25 @@
     margin-right: auto;
 }
 
-.form .input{
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-flow: column wrap;
-}
-.form .input:not(:first-child){ margin-top: 20px; }
-.form .input input{ 
-    width: 100%;
-    padding: 3px 5px;
-}
-.form .input input:focus{
-    outline: rgba(0, 141, 0, 0.45) solid 3px;
-} 
-
-
 .client-area{
     margin-top: 30px;
     /* border: 1px solid #999; */
 }
+
+.entity{}
+.entity-body{
+    margin-top: 5px;
+    cursor: pointer;
+    width: 100%;
+    display: flex; 
+    flex-flow: row nowrap; 
+    align-items: center; 
+    justify-content: flex-start;
+    gap: 15px;
+}
+.entity-body div{ cursor: pointer; }
+
+
 
 .details-area{
     margin-top: 50px;

@@ -21,11 +21,8 @@
         <div class="wrapper">
             <div class="menu">
                 <a href="#">list invoices</a>
-                <span>|</span>
                 <a href="#">list clients</a>
-                <span>|</span>
                 <a href="#">statistics</a>
-                <span>|</span>
                 <a href="#" class="active">new invoice</a>
             </div>
             <span>invoice app</span>
@@ -36,6 +33,19 @@
         <div style="text-align: center"><span>new invoice</span></div>
         <div class="wrapper">
             <div class="client-area form">
+                <div class="entity">
+                    <label for="entity">entity:</label>
+                    <div class="entity-body">
+                        <div class="btn color-grey">
+                            <label for="natural_person">natural person</label>
+                            <input type="checkbox" id="natural_person" name="natural_person">
+                        </div>
+                        <div class="btn color-grey">
+                            <label for="juridical_person">juridical person</label>
+                            <input type="checkbox" id="juridical_person" name="juridical_person">
+                        </div>
+                    </div>
+                </div>
                 <div class="input">
                     <label for="client_name">client name:</label>
                     <input type="text" id="client_name" name="client_name">

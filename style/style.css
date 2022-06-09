@@ -1,11 +1,14 @@
 /* GLOBALS */
 html, body{ margin: 0; padding: 0; background-color:rgb(250, 250, 250);}
-*{ font-family: consolas, monospace; box-sizing: border-box; }
+*{ 
+    font-family: consolas, monospace; box-sizing: border-box; 
+    font-size: 14px;
+}
 
 .navigation .wrapper{
-    border-bottom: 1px solid #999;
+    border-bottom: 1px solid #00000080;
     font-size: 15px;
-    padding: .5rem 1rem;
+    padding: 0 1rem;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -21,6 +24,8 @@ html, body{ margin: 0; padding: 0; background-color:rgb(250, 250, 250);}
 .navigation .wrapper .menu a{
     color: rgb(0, 141, 0);
     text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-right: 1px solid #00000080;
 }
 .navigation .wrapper .menu a:hover{
     color: rgb(0, 116, 0);
@@ -30,6 +35,25 @@ html, body{ margin: 0; padding: 0; background-color:rgb(250, 250, 250);}
     color: rgb(0, 116, 0);
     text-decoration: underline
 }
+
+/* INPUTS  */
+.form .input{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-flow: column wrap;
+}
+.form .input:not(:first-child){ margin-top: 20px; }
+.form .input input{ 
+    width: 100%;
+    padding: 3px 5px;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 3px;
+}
+.form .input input:focus{
+    outline: rgba(0, 141, 0, 0.45) solid 3px;
+} 
 
 /* BUTTONS */
 .btn{
@@ -45,4 +69,12 @@ html, body{ margin: 0; padding: 0; background-color:rgb(250, 250, 250);}
 .btn.color-green:hover{
     background-color: rgba(10, 133, 10, 0.85);
     color: #fff;
+}
+.btn.color-grey{
+    background-color: rgba(233, 233, 233, 0.85);
+    color: #333;
+}
+.btn.color-grey:hover{
+    background-color: rgba(219, 219, 219, 0.85);
+    color: #333;
 }
