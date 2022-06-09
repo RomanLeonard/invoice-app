@@ -39,7 +39,7 @@ if($_POST['client_name'] && $_POST['client_address']){
         $client_id = mysqli_insert_id($conn);
     } else{ echo json_encode('<br>error: '.mysqli_error($conn)); }
     
-    
+     
     mysqli_close($conn);
 }
 else{
