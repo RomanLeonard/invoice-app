@@ -5,7 +5,7 @@ $(document).ready(function(){
 
         var items = [];
         $('input[name="item"]').each(function( index ){
-            item  = $(this).val()
+           var  item  = $(this).val()
             price = 24;
             items.push({ item : price });
         });
