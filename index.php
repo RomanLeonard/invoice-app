@@ -14,10 +14,10 @@
     <div class="navigation">
         <div class="wrapper">
             <div class="menu">
-                <a href="#">list invoices</a>
+                <a href="list.php">list invoices</a>
                 <a href="#">list clients</a>
                 <a href="#">statistics</a>
-                <a href="#" class="active">new invoice</a>
+                <a href="index.php" class="active">new invoice</a>
             </div>
             <span>invoice app</span>
         </div>
@@ -32,7 +32,6 @@
             <span class="outline-text" id="last_invoice_number">-</span>
             <span class="outline-text"><script>document.write(new Date().getDate())</script>-<script>document.write(new Date().getMonth() + 1)</script>-<script>document.write(new Date().getFullYear())</script></span>
           </div>
-
 
         </div>
 
