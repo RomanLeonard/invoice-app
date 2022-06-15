@@ -1,9 +1,3 @@
-<?php 
-    include 'getter.php';
-
-    GET_INDEX_FILES();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,6 +25,17 @@
 
     <div class="content">
         <div style="text-align: center"><span>new invoice</span></div>
+
+        <div class="wrapper">
+          <div class="invoice-info">
+            <span class="outline-text">BIZ</span>
+            <span class="outline-text" id="last_invoice_number">-</span>
+            <span class="outline-text"><script>document.write(new Date().getDate())</script>-<script>document.write(new Date().getMonth() + 1)</script>-<script>document.write(new Date().getFullYear())</script></span>
+          </div>
+
+
+        </div>
+
         <div class="wrapper">
             <div class="client-area form">
                 <div class="entity">
@@ -61,12 +66,22 @@
             </div>
             <div class="details-area form">
                 <div class="input">
+                    <label for="shipping_price">shipping price:</label>
+                    <input type="text" id="shipping_price" name="shipping_price">
+                </div>
+                <div class="input">
                     <label for="item_1">item <span class="item-count">1</span>:</label>
-                    <input type="text" id="item_1" name="item">
+                    <div class="input-with-price">
+                      <input type="text" id="item_1" name="item">
+                      <input type="text" id="item_1_price" name="item_price">
+                    </div>
                 </div>
                 <div class="input">
                     <label for="item_2">item <span class="item-count">2</span>:</label>
-                    <input type="text" id="item_2" name="item">
+                    <div class="input-with-price">
+                      <input type="text" id="item_2" name="item">
+                      <input type="text" id="item_2_price" name="item_price">
+                    </div>
                 </div>
             </div>
 

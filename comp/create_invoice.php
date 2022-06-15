@@ -13,37 +13,39 @@ if($_POST['client_name'] && $_POST['client_address']){
     $client_mobile  = (!empty($_POST['client_mobile'])) ? mysqli_real_escape_string($conn, $_POST['client_mobile']) : 0;
     $client_email   = (!empty($_POST['client_email'])) ? mysqli_real_escape_string($conn, $_POST['client_email']) : 0;
 
-    $sql_clients = "INSERT INTO clients (name, cui, onrc, address, iban, bank, mobile, email) 
+    $shipping_price   = (!empty($_POST['shipping_price'])) ? mysqli_real_escape_string($conn, $_POST['shipping_price']) : 0;
+
+    $sql_clients = "INSERT INTO clients (name, cui, onrc, address, iban, bank, mobile, email)
         VALUES ('$client_name', '$client_cui', '$client_onrc', '$client_address', '$client_iban', '$client_bank', '$client_mobile', '$client_email')";
     if( mysqli_query($conn, $sql_clients) ){
         echo json_encode('added');
         $client_id = mysqli_insert_id($conn);
     } else{ echo json_encode('<br>error: '.mysqli_error($conn)); }
-   
+
 
     // INVOICE
     $invoice_serial = 'BIZ'; //mysqli_real_escape_string($conn, $_POST['invoice_serial']);
-    $invoice_number = '001'; //mysqli_real_escape_string($conn, $_POST['invoice_number']);
-    $invoice_date   = date('Y-m-d');
+    $invoice_number = $_POST['invoice_number']; $invoice_number++;
+    $invoice_date   = date('d-m-Y');
 
     $items  = [];
     foreach($_POST['invoice_items'] as $item){
-        array_push($items, mysqli_real_escape_string($conn, $item));
+        array_push($items, $item);
     }
     $invoice_items = json_encode($items);
 
-    $sql_invoices = "INSERT INTO invoices (serial, number, date, client_id, items, price_total, status) 
-        VALUES ('BIZ', '0206', '$invoice_date', $client_id, '$invoice_items', 245, 'normal')";
+    $sql_invoices = "INSERT INTO invoices (serial, number, date, client_id, items, shipping_price, price_total, status)
+        VALUES ('BIZ', '$invoice_number', '$invoice_date', $client_id, '$invoice_items', '$shipping_price', 245, 'normal')";
      if( mysqli_query($conn, $sql_invoices) ){
         echo json_encode('added');
         $client_id = mysqli_insert_id($conn);
     } else{ echo json_encode('<br>error: '.mysqli_error($conn)); }
-    
-     
+
+
     mysqli_close($conn);
 }
 else{
-    echo json_encode('error');
+    echo json_encode('error - first if');
 }
 
 ?>

@@ -1,29 +1,44 @@
 .content{ margin-top: 50px; }
 .content .wrapper{
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.invoice-info{
+  text-align: center;
+  margin-top: 25px;
+}
+.invoice-info .outline-text{
+  border: 1px solid rgba(0,0,0,0.15);
+  padding: 3px 9px;
 }
 
 .client-area{
-    margin-top: 30px;
-    /* border: 1px solid #999; */
+  margin-top: 30px;
+  /* border: 1px solid #999; */
 }
 
 .entity-body{
-    margin-top: 5px;
-    cursor: pointer;
-    width: 100%;
-    display: flex; 
-    flex-flow: row nowrap; 
-    align-items: center; 
-    justify-content: flex-start;
-    gap: 15px;
+  margin-top: 5px;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
 }
 .entity-body div{ cursor: pointer; }
 
 
 
 .details-area{
-    margin-top: 50px;
+  margin-top: 50px;
+}
+.details-area .input-with-price{
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 10px;
+  align-items: center;
 }
