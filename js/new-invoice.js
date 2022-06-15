@@ -12,10 +12,12 @@ $(document).ready(function(){
     $('.invoice-submit-btn').on('click', function(){
 
       var items = [];
+      var total_price = 0;
       $('input[name="item"]').each(function( index ){
         var item   = $(this).val()
         var price  = $(this).closest('.input-with-price').find('input[name="item_price"]').val()
         items.push({ item : price });
+        total_price = total_price + parseFloat(price);
       });
 
 
@@ -28,11 +30,12 @@ $(document).ready(function(){
           client_address: $('input[name="client_address"]').val(),
           client_phone: $('input[name="client_phone"]').val(),
           shipping_price: $('input[name="shipping_price"]').val(),
-          invoice_items: items
+          invoice_items: items,
+          total_price: total_price
         }
       })
       .done(function( data ) {
-        console.log( data );
+        notification('success', 'Success');
       });
 
 
